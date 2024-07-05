@@ -7,7 +7,7 @@ for (i = 0; i < (16 * 16); i++) {
     const pixel = document.createElement('div');
     pixel.className = "pixel";
     pixel.addEventListener("mouseover", () => {
-      pixel.style.backgroundColor = "black";
+      pixel.style.backgroundColor = "rgb(" + getRandomNumber() +", " + getRandomNumber() + ", " + getRandomNumber() + ")";
     })
   
     container.appendChild(pixel);
@@ -26,9 +26,13 @@ btn.addEventListener("click", () => {
     pixel.className = "pixel";
     pixel.style.width = (1 / input * 100) + "%";
     pixel.addEventListener("mouseover", () => {
-      pixel.style.backgroundColor = "black";
+      pixel.style.backgroundColor = "rgb(" + getRandomNumber() +", " + getRandomNumber() + ", " + getRandomNumber() + ")";
     })
   
     container.appendChild(pixel);
   }
 })
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * 256);
+}
